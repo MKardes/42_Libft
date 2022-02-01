@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 10:00:48 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/01 10:00:51 by mkardes          ###   ########.fr       */
+/*   Created: 2022/02/01 16:56:30 by mkardes           #+#    #+#             */
+/*   Updated: 2022/02/01 16:56:32 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c <= 'z' && c >= 'a')
-		return (c - 32);
-	return (c);
+	ft_memset(s, '\0', n);
 }
