@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/01 10:46:26 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/03 14:57:46 by mkardes          ###   ########.fr       */
+/*   Created: 2022/02/03 12:49:31 by mkardes           #+#    #+#             */
+/*   Updated: 2022/02/03 12:55:28 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*s;
-	size_t	len;
-	int		i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	len = ft_strlen(str);
-	s = (char *)malloc(sizeof(char) * (len + 1));
-	if (!s)
-		return (0);
-	while (str[i] != '\0')
+	while (haystack[i] != '\0' && i < len)
 	{
-		s[i] = str[i];
+		j = 0;
+		while (needle[j] != '\0' && haystack[i + j] == needle[j])
+		{
+			if (needle[j + 1] == '\0')
+				return (&((char *)haystack)[i]);
+			j++;
+		}
 		i++;
 	}
-	s[i] = '\0';
-	return (s);
+	return (0);
 }
