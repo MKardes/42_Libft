@@ -49,7 +49,7 @@ CC = gcc
 RM = rm -f
 
 all: $(NAME) $(LIB)
-	@echo "\033[0;91m\nProgram checking..."
+	@echo "$(GREEN)\nProgram checking..."
 	@$(CC) main.c $(NAME)
 	@./a.out
 
