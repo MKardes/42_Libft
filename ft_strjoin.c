@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/03 20:25:11 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/04 11:57:32 by mkardes          ###   ########.fr       */
+/*   Created: 2022/02/04 12:09:31 by mkardes           #+#    #+#             */
+/*   Updated: 2022/02/04 14:13:46 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, const char *s2)
 {
-	char	*a;
-	size_t	i;
+	char	*str;
+	size_t	len;
 
-	if (!s)
+	if (!s1 || !s2)
 		return (0);
-	a = (char *)malloc(sizeof(char) * len + 1);
-	if (!a)
+	len = ft_strlen(s1);
+	len = len + ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (0);
-	i = start;
-	ft_strlcpy(a, s + start, len + 1);
-	return (a);
+	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
+	ft_strlcat(str, s2, ft_strlen(s1) + ft_strlen(s2) + 1);
+	return (str);
 }

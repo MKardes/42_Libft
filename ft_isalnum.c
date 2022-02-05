@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:51:35 by mkardes           #+#    #+#             */
-/*   Updated: 2022/01/31 14:01:02 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/04 11:26:58 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return ((c >= '0' && c <= '9')
-		|| (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+	return (ft_isdigit(c) || ft_isalpha(c));
 }
