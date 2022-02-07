@@ -6,7 +6,7 @@
 #    By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/03 19:10:24 by mkardes           #+#    #+#              #
-#    Updated: 2022/02/05 16:12:54 by mkardes          ###   ########.fr        #
+#    Updated: 2022/02/07 19:37:39 by mkardes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ SRCS = ft_isalpha.c \
 	   ft_substr.c \
 	   ft_strjoin.c \
 	   ft_strtrim.c \
-	   ft_split.c
+	   ft_split.c \
+	   ft_itoa.c
 
 GREEN = \033[0;92m
 
@@ -53,10 +54,10 @@ CC = gcc
 RM = rm -f
 
 all: $(NAME) $(LIB)
-	@echo "\033[0;91m\nProgram checking..."
+	@echo "$(GREEN)\nProgram checking..."
 	@$(CC) main.c $(NAME)
 	@./a.out
-	@echo "\n\n\n"
+	@echo "\033[0;93m\n\n\n"
 	@$(CC) main1.c $(NAME)
 	@./a.out
 

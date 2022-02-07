@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 10:38:39 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/01 10:41:06 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/07 11:43:01 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	ft_atoi(const char *str)
 	tmp = 0;
 	if (!str)
 		return (0);
-	while (str[i] == ' ' || str[i] == '\r' || str[i] == '\t')
+	while (str[i] == ' ' || str[i] == '\r' || str[i] == '\t'
+		|| str[i] == '\n' || str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{

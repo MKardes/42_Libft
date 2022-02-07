@@ -6,13 +6,13 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:09:31 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/04 14:13:46 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/07 11:32:05 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, const char *s2)
+char	*ft_strjoin(char const *s1, const char *s2)
 {
 	char	*str;
 	size_t	len;
