@@ -1,4 +1,0 @@
-git add *
-git status
-git commit -m "Denemeashjfkhaskljnfsdjlbfl<ıjdbskdjbnc<sdnvsvnsınvswrbvpos<jvjwvjnwvpWJwsaipıznfcisıdnv<sıjksakfpalfpasfpsamfpamvpwmsvmdfbmdfbmdsfbmsdfbmlmdfvldfkbmndflbkn nmklknknkjnjkjnjknnjknjv"
-git push
