@@ -6,7 +6,7 @@
 #    By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/03 19:10:24 by mkardes           #+#    #+#              #
-#    Updated: 2022/02/07 19:37:39 by mkardes          ###   ########.fr        #
+#    Updated: 2022/02/08 13:54:01 by mkardes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ SRCS = ft_isalpha.c \
 	   ft_strjoin.c \
 	   ft_strtrim.c \
 	   ft_split.c \
-	   ft_itoa.c
+	   ft_itoa.c \
+	   ft_strmapi.c
 
 GREEN = \033[0;92m
 
