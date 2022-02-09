@@ -6,7 +6,7 @@
 #    By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/03 19:10:24 by mkardes           #+#    #+#              #
-#    Updated: 2022/02/08 13:54:01 by mkardes          ###   ########.fr        #
+#    Updated: 2022/02/09 16:49:11 by mkardes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,12 @@ SRCS = ft_isalpha.c \
 	   ft_strtrim.c \
 	   ft_split.c \
 	   ft_itoa.c \
-	   ft_strmapi.c
+	   ft_strmapi.c \
+	   ft_striteri.c \
+	   ft_putchar_fd.c \
+	   ft_putstr_fd.c \
+	   ft_putendl_fd.c \
+	   ft_putnbr_fd.c
 
 GREEN = \033[0;92m
 
@@ -65,7 +70,7 @@ all: $(NAME) $(LIB)
 
 $(NAME): $(OBJS)
 	@echo "\033[0;93m"
-	ar rc $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -include $(LIB) -o $@

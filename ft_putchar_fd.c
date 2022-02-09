@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkardes <mkardes@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:22:38 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/09 12:22:39 by mkardes          ###   ########.fr       */
+/*   Created: 2022/02/09 12:20:17 by mkardes           #+#    #+#             */
+/*   Updated: 2022/02/09 12:21:18 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	write(fd, &c, 1);
 }
 /*
-
-void	ft_ft(unsigned int i, char *a)
-{
-	*a = *a + i;
-}
-
 int	main()
 {
-	char	a[] = "aaaaaa";
-
-	ft_striteri(a, &ft_ft);
-	printf("%s", a);
-}*/
+	int i = open("göksu.txt", O_WRONLY);
+	int	a = open("emircan.txt", O_WRONLY);
+	ft_putchar_fd('A', i);
+	ft_putchar_fd('k', a);
+}
+*/

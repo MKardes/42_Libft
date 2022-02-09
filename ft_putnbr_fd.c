@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkardes <mkardes@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:22:38 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/09 12:22:39 by mkardes          ###   ########.fr       */
+/*   Created: 2022/02/09 12:26:32 by mkardes           #+#    #+#             */
+/*   Updated: 2022/02/09 16:12:53 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
+	if (n == -2147483648)
+		write(fd, "-2147483648", 11);
+	else if (n < 0)
 	{
-		f(i, &s[i]);
-		i++;
+		n = -n;
+		write(fd, "-", 1);
+		ft_putnbr_fd(n, fd);
+	}
+	else
+	{
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + 48, fd);
 	}
 }
 /*
-
-void	ft_ft(unsigned int i, char *a)
-{
-	*a = *a + i;
-}
-
 int	main()
 {
-	char	a[] = "aaaaaa";
-
-	ft_striteri(a, &ft_ft);
-	printf("%s", a);
+	int n = open("deneme.txt", O_WRONLY);
+	ft_putnbr_fd(2147483647, n);
 }*/

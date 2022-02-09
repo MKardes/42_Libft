@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkardes <mkardes@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 12:22:38 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/09 12:22:39 by mkardes          ###   ########.fr       */
+/*   Created: 2022/02/09 12:13:36 by mkardes           #+#    #+#             */
+/*   Updated: 2022/02/09 12:22:22 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	write(fd, s, ft_strlen(s));
 }
 /*
 
-void	ft_ft(unsigned int i, char *a)
-{
-	*a = *a + i;
-}
-
 int	main()
 {
-	char	a[] = "aaaaaa";
-
-	ft_striteri(a, &ft_ft);
-	printf("%s", a);
+	int	i = open("deneme.txt", O_WRONLY);
+	ft_putstr_fd("Amele", i);
 }*/
