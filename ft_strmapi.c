@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 12:31:42 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/08 14:02:34 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/11 19:28:18 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (str);
 }
+/*
+char	ft_asd(unsigned int a, char b)
+{
+	b = b + a;
+	return(b);
+}
+
+int	main()
+{
+	char	a[] = "asdasd";
+	printf("%s", ft_strmapi(a, &ft_asd));
+}*/

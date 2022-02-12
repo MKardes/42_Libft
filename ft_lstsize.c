@@ -1,11 +1,16 @@
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (!new)
-        return ;
-    new -> next = *lst;
-	*lst = new;
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst -> next;
+		i++;
+	}
+	return (i);
 }
 /*
 int	main()
@@ -36,11 +41,16 @@ int	main()
 	ft_lstadd_front(&list, elem3);
 	ft_lstadd_front(&list, elem4);
 
+	printf("%d", ft_lstsize(list));
+	
+	list = elem4;
+	
 	puts((char *)list->content);
 	while (list->next != NULL)
 	{
 		list = list->next;
 		puts((char *)list->content);
 	}
-    return (0);
+    
+	return (0);
 }*/
