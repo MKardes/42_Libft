@@ -6,7 +6,7 @@
 #    By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/03 19:10:24 by mkardes           #+#    #+#              #
-#    Updated: 2022/02/09 16:49:11 by mkardes          ###   ########.fr        #
+#    Updated: 2022/02/13 11:03:52 by mkardes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,19 @@ SRCS = ft_isalpha.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c
 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstadd_back.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
+
 GREEN = \033[0;92m
+
+BONUS_OBJS = $(BONUS:.c=.o)
 
 OBJS = $(SRCS:.c=.o)
 
@@ -67,17 +79,19 @@ all: $(NAME) $(LIB)
 	@$(CC) main1.c $(NAME)
 	@./a.out
 
-
 $(NAME): $(OBJS)
 	@echo "\033[0;93m"
-	@ar rc $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
-.c.o:
-	$(CC) $(CFLAGS) -c $< -include $(LIB) -o $@
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	$(CC) $(NAME) main_bonus.c
+	./a.out
+	@echo \n\n\n
 
 clean:
 	@echo "$(GREEN)Loading..."
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
 	$(RM) $(NAME)

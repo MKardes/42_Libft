@@ -1,5 +1,15 @@
 #include "libft.h"
 
+void	ft_dels(void *a)
+{
+	ft_bzero(a, ft_strlen(a));
+}
+
+void	ft_iter(void *a)
+{
+	((unsigned char *)a)[0] = 'A';
+}
+
 int	main()
 {
     t_list      *elem;
@@ -23,23 +33,19 @@ int	main()
     elem4 = ft_lstnew(s4);
 	elem6 = ft_lstnew(s5);
 
-	//elem->next = elem2;
-	//elem2->next = elem3;
-	//elem3->next = elem4;
-
 	ft_lstadd_front(&list, elem);
 	ft_lstadd_front(&list, elem2);
 	ft_lstadd_front(&list, elem3);
 	ft_lstadd_front(&list, elem4);
 	ft_lstadd_back(&list, elem6);
 
-	printf("%d", ft_lstsize(list));
+	printf("SIZE   --> %d", ft_lstsize(list));
 
 	list = elem4;
 
 	elem5 = ft_lstlast(list);
 
-	printf("\n*%s*\n\n", elem5 -> content);
+	printf("\n'LAST' --> %s\n\n", elem5 -> content);
 	list = elem4;
 
 	puts((char *)list->content);
@@ -49,5 +55,31 @@ int	main()
 		puts((char *)list->content);
 	}
 
+	ft_lstdelone(elem3, ft_dels);
+
+	printf("\n¨¨¨¨DEL ONE¨¨¨¨¨\n");
+	list = elem4;
+	while (list != NULL)
+	{
+		printf("%s\n", list -> content);
+		list = list -> next;
+	}
+
+	list = elem4;
+	//ft_lstiter(list, ft_iter);
+	printf("\n¨¨¨¨ITER¨¨¨¨\n");
+	while (list != NULL)
+	{
+		printf("%s\n", list -> content);
+		list = list -> next;
+	}
+	list = elem4;
+	//ft_lstclear(&list, ft_dels);
+	printf("\n¨¨¨¨CLEAR¨¨¨¨\n");
+	while (list != NULL)
+	{
+		printf("%s\n", list -> content);
+		list = list -> next;
+	}
 	return (0);
 }

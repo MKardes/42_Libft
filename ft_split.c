@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 11:30:00 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/07 22:35:42 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/13 17:23:53 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	**ft_place(char **str, char const *s1, char ch, int wordcount)
 			word_len++;
 			index++;
 		}
-		str[word] = (char *)malloc(sizeof(char) * (word_len + 1));
+		str[word] = (char *)malloc(sizeof(char) * word_len + 1);
 		if (!str)
 			return (0);
 		ft_word(str[word], s1, index, word_len);
@@ -81,8 +81,10 @@ char	**ft_split(const char *s, char c)
 	char	**str;
 	int		wrdcnt;
 
+	if (!s)
+		return (0);
 	wrdcnt = strcount(s, c);
-	str = (char **)malloc(sizeof(char *) * (wrdcnt + 1));
+	str = (char **)malloc(sizeof(char *) * wrdcnt + 1);
 	if (!str)
 		return (0);
 	ft_place(str, s, c, wrdcnt);
