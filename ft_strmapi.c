@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 12:31:42 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/11 19:28:18 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/14 10:52:41 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	unsigned int	i;
 
+	if (!s)
+		return (0);
 	str = ft_strdup(s);
-	if (!str || !f)
+	if (!str)
 		return (0);
 	i = 0;
 	while (str[i] != '\0')

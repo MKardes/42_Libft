@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 14:12:58 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/02 14:13:24 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/14 10:25:18 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i] != (char)c)
 	{
 		if (!*(s + i))

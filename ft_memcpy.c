@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 17:29:52 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/13 09:47:16 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/14 09:53:09 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!dst)
+	if (!dst && !src)
 		return (0);
 	while (i < n)
 	{

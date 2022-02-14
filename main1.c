@@ -13,9 +13,7 @@ int	main()
 	int			*d;
 	int			i;
 	char		**str;
-	t_list		*e;
 	
-	e = (t_list *)malloc(sizeof(t_list));
 	b = ft_strnstr(nstr, nstr1, 3);
 	a = ft_strnstr(nstr, nstr1, 10);
 	printf("ft_strnstr: 'Bahaneler' --> %s, '(null)' --> %s\n", a, b);
@@ -32,7 +30,4 @@ int	main()
 	printf("ft_strtrim: 'Fight' --> %s\n", ft_strtrim(c, f));
 	str = ft_split(den, ' ');
 	printf("ft_split: 'Ama-senden-olmuyo-kendimi-koparamıyorum-bir-an!' --> %s-%s-%s-%s-%s-%s-%s\n",str[0], str[1], str[2], str[3], str[4], str[5], str[6]);
-	e -> content = "Buralar";
-	e -> next = ft_lstnew("DAR Efendi");
-	printf("ft_lstnew: 'Buralar DAR Efendi' --> %s %s\n",e -> content, e -> next -> content);
 }

@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 20:45:12 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/13 18:47:48 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/14 12:24:00 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static char	*ft_writer(char *str, int bas, int n)
 	int	b;
 	int	c;
 
-	//b = bas - 1;
 	i = 0;
 	if (n > 9)
 	{

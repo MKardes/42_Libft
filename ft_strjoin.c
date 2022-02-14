@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 12:09:31 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/07 11:32:05 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/14 10:54:56 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ char	*ft_strjoin(char const *s1, const char *s2)
 
 	if (!s1 || !s2)
 		return (0);
-	len = ft_strlen(s1);
-	len = len + ft_strlen(s2);
+	len = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
