@@ -6,7 +6,7 @@
 /*   By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 18:03:30 by mkardes           #+#    #+#             */
-/*   Updated: 2022/02/14 11:30:37 by mkardes          ###   ########.fr       */
+/*   Updated: 2022/02/14 15:11:35 by mkardes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *s2)
 	int		baslangic;
 	char	*str;
 
+	if (!s1)
+		return (NULL);
 	son = ft_strlen(s1);
 	baslangic = 0;
 	while (s1[baslangic] != '\0' && checker(s2, s1[baslangic]))
