@@ -6,7 +6,7 @@
 #    By: mkardes <mkardes@student.42kocaeli.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/03 19:10:24 by mkardes           #+#    #+#              #
-#    Updated: 2022/02/16 01:37:42 by mkardes          ###   ########.fr        #
+#    Updated: 2022/02/16 01:03:03 by mkardes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,16 +74,28 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@echo "\033[0;93m"
+	@ar rcs $(NAME) $(OBJS)
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	@echo "$(GREEN)\nProgram checking...\n\n\n$(YELLOW)******************************\n*********** PART 1 ***********\n******************************\n$(RED)"
+	@$(CC) test_part1.c $(NAME)
+	@./a.out
+	@echo "\n\n$(YELLOW)******************************\n*********** PART 2 ***********\n******************************\n$(RED)"
+	@$(CC) test_part2.c $(NAME)
+	@./a.out
+	@echo "\n\n$(YELLOW)******************************\n********* BONUS PART *********\n******************************\n$(RED)"
+	@$(CC) $(NAME) test_bonuspart.c
+	@./a.out
+	@echo "\n"
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	@echo "$(GREEN)Loading..."
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re:	fclean all
 
