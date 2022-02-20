@@ -69,7 +69,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 CC = gcc
 
-RM = rm -f
+RM = rm -rf
 
 all: $(NAME)
 
