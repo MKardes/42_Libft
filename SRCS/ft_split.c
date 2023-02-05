@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../LIB/libft.h"
 
 static char	*ft_word(char *str, const char *s1, int son, int wordlen)
 {

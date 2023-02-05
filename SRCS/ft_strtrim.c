@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../LIB/libft.h"
 
 int	checker(const char *a, char b)
 {

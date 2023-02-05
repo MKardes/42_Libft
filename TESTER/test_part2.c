@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../LIB/libft.h"
 #include <stdio.h>
 
 char	dtr(unsigned int i, char a)

@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../LIB/libft.h"
 #include <stdio.h>
 
 int	main(void)
